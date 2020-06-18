@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 import java.util.HashMap;
 
-public class midertm {
+public class StudentGrades {
 
 	public static void main(String[] args) {
 
@@ -20,15 +20,16 @@ public class midertm {
 
 		// Students' grades (pre-entered)
 
-		studentGrades.put("Shailen asunda", 88.4);
+		studentGrades.put("David Kasunda", 85.4);
 
-		studentGrades.put("Christian bentake", 94.3);
+		studentGrades.put("Christian Bushiri", 94.3);
 
-		studentGrades.put("zaha ", 80.7);
+		studentGrades.put("Mariette Lukombo", 79.7);
 
-		studentGrades.put("kane harry", 68.3);
+		studentGrades.put("Arris Matonge", 69.3);
 
-		studentGrades.put("modric Lucas", 93.5);
+		studentGrades.put("Jeremie Lubila", 97.5);
+
 
 
 		if (studentGrades.containsKey(studentName)) {
