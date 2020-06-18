@@ -7,7 +7,6 @@ public class PhotoLineups {
 	// TODO: Write method to create and output all permutations of the list of
 
 	// names.
-
 	public static void main(String[] args) {
 
 		Scanner scnr = new Scanner(System.in);
@@ -18,6 +17,8 @@ public class PhotoLineups {
 
 		String name;
 
+
+
 		// TODO: Read in a list of names; stop when -1 is read. Then call recursive
 
 		// method.
@@ -25,11 +26,14 @@ public class PhotoLineups {
 	}
 
 	
+
 	public static void allPermutations(ArrayList<String> permList, ArrayList<String> nameList) {
 
 		System.out.println("Enter names, separated by a space. -1 to exit");
 
 		String name = scnr.next();
+
+
 
 		while (!name.equals("-1")) {
 
