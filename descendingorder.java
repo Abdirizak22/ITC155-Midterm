@@ -1,35 +1,80 @@
-import java.util.Scanner;
+import java.util.*;
 
-public class descendingorder {
 
-	/ TODO: Write a void method selectionSortDescendTrace() that takes
 
-	// an integer array and the number of elements in the array as arguments,
+public class DescendingOrder {
 
-	// and sorts the array into descending order.
+	public static void main(String[] args) {
 
-	public static void selectionSortDescendTrace(int [] numbers, int numElements) {
+		int[] numbers = new int[10]; // array.length = 10
 
-	  
+		int numElements = 0; // how many numbers are there? -- so it won't showing 0,0,0 when <10
+
+		int i = 0; // number [index]
+
+
+
+		Scanner scnr = new Scanner(System.in);
+
+		System.out.println("Enter number, (max=10), separated by a space. -1 to exit :");
+
+		int input = scnr.nextInt(); // taking the first number
+
+
+
+		while (input != -1) {
+
+			numbers[i] = input; // adding each number to the array
+
+			i++;
+
+			numElements++;
+
+			input = scnr.nextInt(); // taking the next number
+
+		}
+
+		selectionSortDescendTrace(numbers, numElements);
+
+		scnr.close();
 
 	}
 
 
-	public static void main(String[] args) {
 
-	Scanner scnr = new Scanner(System.in);
+	public static void selectionSortDescendTrace(int[] numbers, int numElements) {
 
-	 
-	int input, i = 0;
+		for (int i = 0; i < numElements - 1; i++) { // taking 0th number
 
-	int numElements = 0;
+			int biggestIndex = i;
 
-	int [] numbers = new int[10];
+			for (int j = i + 1; j < numElements; j++) { // taking 0th + 1 number
+
+				if (numbers[j] > numbers[biggestIndex]) { // comparing number[j] with the biggest index
+
+					biggestIndex = j;
+
+				}
+
+			}
+
+			int temporary = numbers[i];
+
+			numbers[i] = numbers[biggestIndex];
+
+			numbers[biggestIndex] = temporary;
 
 
-	// TODO: Read in a list of up to 10 positive integers; stop when
 
-	// -1 is read. Then call selectionSortDescendTrace() method.
+			for (int k = 0; k < numElements; k++) { // printing the new sorted array in each i-th iteration
+
+				System.out.print(numbers[k] + " ");
+
+			}
+
+			System.out.println();
+
+		}
 
 
 
