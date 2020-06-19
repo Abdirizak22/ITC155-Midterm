@@ -1,50 +1,47 @@
-import java.util.Scanner;
+mport java.util.Scanner;
 
-import java.util.ArrayList;
+public class photlineup {
 
-public class PhotoLineups {
+	public static void main(String[] args) 
 
-	// TODO: Write method to create and output all permutations of the list of
+    { 
 
-	// names.
-	public static void main(String[] args) {
+        String str = "Julia Lucas Mia -1"; 
 
-		Scanner scnr = new Scanner(System.in);
+        int n = str.length(); 
 
-		ArrayList<String> nameList = new ArrayList<String>();
+        Permutation permutation = new Permutation(); 
 
-		ArrayList<String> permList = new ArrayList<String>();
+        permutation.permute(str, 0, n-1); 
 
-		String name;
-
-
-
-		// TODO: Read in a list of names; stop when -1 is read. Then call recursive
-
-		// method.
-
-	}
-
-	
-
-	public static void allPermutations(ArrayList<String> permList, ArrayList<String> nameList) {
-
-		System.out.println("Enter names, separated by a space. -1 to exit");
-
-		String name = scnr.next();
-
-
-
-		while (!name.equals("-1")) {
-
-		nameList.add(name);
-
-		name = scnr.next();
-
-		}
-
-	}
-
-
+    } 
 
 }
+
+private void permute(String str, int l, int r) 
+
+{ 
+
+    if (l == r) 
+
+        System.out.println(str); 
+
+    else
+
+    { 
+
+        for (int i = l; i <= r; i++) 
+
+        { 
+
+            str = swap(str,l,i); 
+
+            permute(str, l+1, r); 
+
+            str = swap(str,l,i); 
+
+        } 
+
+    } 
+
+} 
